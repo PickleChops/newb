@@ -16,3 +16,10 @@ $app->get('/', function () use ($app) {
     return view('homepage');
 
 });
+
+$app->get('/info', function () use ($app) {
+
+    phpinfo();
+    die();
+
+});
