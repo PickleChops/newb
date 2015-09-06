@@ -6,5 +6,9 @@ web:
    - .:/var/www/html
   links:
       - redis
+  environment:
+      - REDIS_PORT=6379
 redis:
   build: ./env/containers/redis/
+
+

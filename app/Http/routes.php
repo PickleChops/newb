@@ -11,11 +11,6 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-
-    return view('homepage');
-
-});
 
 $app->get('/info', function () use ($app) {
 
@@ -23,3 +18,5 @@ $app->get('/info', function () use ($app) {
     die();
 
 });
+
+$app->get('/', 'HomeController@index');
