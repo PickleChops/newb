@@ -1,0 +1,10 @@
+web:
+  build: ./env/containers/apache/
+  ports:
+   - "80:80"
+  volumes:
+   - .:/var/www/html
+  links:
+      - redis
+redis:
+  build: ./env/containers/redis/
