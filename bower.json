@@ -17,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "modernizr": "~3.0.0",
+    "velocity": "~1.2.3"
   }
 }

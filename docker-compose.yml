@@ -2,6 +2,7 @@ web:
   build: ./env/containers/apache/
   ports:
    - "80:80"
+   - "9000:9000"
   volumes:
    - .:/var/www/html
   links:
@@ -10,5 +11,16 @@ web:
       - REDIS_PORT=6379
 redis:
   build: ./env/containers/redis/
+  ports:
+    - "6379:6379"
+collect:
+  build: ./env/containers/php-cli/
+  ports:
+    - "9001:9000"
+  volumes_from:
+    - web
+
+
+
 
 

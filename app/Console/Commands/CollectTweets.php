@@ -1,6 +1,7 @@
 <?php
 namespace App\Console\Commands;
 
+use App\Console\Commands\Lib\QueueRawTweets;
 use Illuminate\Console\Command;
 
 
@@ -46,7 +47,7 @@ class CollectTweets extends Command
         define("TWITTER_CONSUMER_SECRET", env("TWITTER_CONSUMER_SECRET"));
 
         // Start streaming thanks Twitter
-        $sc = new \App\Lib\QueueRawTweets(env('TWITTER_OAUTH_TOKEN'), env('TWITTER_OAUTH_SECRET'), \Phirehose::METHOD_FILTER);
+        $sc = new QueueRawTweets(env('TWITTER_OAUTH_TOKEN'), env('TWITTER_OAUTH_SECRET'), \Phirehose::METHOD_FILTER);
 
         //Set a few basics for our stream
         $sc->setLang('en');

@@ -20,3 +20,11 @@ $app->get('/info', function () use ($app) {
 });
 
 $app->get('/', 'HomeController@index');
+
+
+
+$app->group(['prefix' => 'xhr','namespace' => 'App\Http\Controllers\Xhr'], function ($app) {
+
+    $app->get('tags',"TagsXhr@index");
+
+});
